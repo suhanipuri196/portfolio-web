@@ -1,0 +1,105 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(13, 13, 26, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px 40px;
+  transition: all 0.3s ease;
+}
+
+.navigation.scrolled {
+  background: rgba(13, 13, 26, 0.98);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 14px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff0000;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.nav-center {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-center button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-center button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff0000;
+  transition: width 0.3s ease;
+}
+
+.nav-center button:hover::after {
+  width: 100%;
+}
+
+.nav-right .cta-button {
+  background: #ff0000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    padding: 15px 20px;
+  }
+  
+  .nav-center {
+    display: none;
+  }
+  
+  .nav-left {
+    font-size: 12px;
+  }
+  
+  .nav-right .cta-button {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+}

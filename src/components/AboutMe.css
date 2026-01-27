@@ -1,0 +1,210 @@
+.about-me {
+  min-height: 100vh;
+  background: #ff0000;
+  position: relative;
+  padding: 100px 40px 60px;
+  overflow: hidden;
+}
+
+.about-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ff0000;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  font-size: 24px;
+  color: #ffd700;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 100px;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.reliability-card {
+  background: #000;
+  color: white;
+}
+
+.reliability-card .card-content h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.personal-card {
+  background: #fff;
+  color: #000;
+}
+
+.card-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card-image {
+  margin-bottom: 30px;
+}
+
+.illustration-placeholder-about {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+}
+
+.card-content h2 {
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.card-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.profile-section {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 30px 0;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  flex-shrink: 0;
+  border: 3px solid #000;
+}
+
+.facts-section {
+  margin-top: 40px;
+  padding: 30px;
+  background: #1a1a2e;
+  border-radius: 8px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.fact-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.facts-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.fact-illustration {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cats-section {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
+  z-index: 2;
+}
+
+.checkerboard-divider-bottom {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.checkerboard-divider-bottom .checkerboard-pattern {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, #000 25%, transparent 25%),
+    linear-gradient(-45deg, #000 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #000 75%),
+    linear-gradient(-45deg, transparent 75%, #000 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  animation: checkerboardMove 2s linear infinite;
+}
+
+@keyframes checkerboardMove {
+  0% {
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  }
+  100% {
+    background-position: 40px 0, 40px 20px, 60px -20px, 20px 0px;
+  }
+}
+
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .about-card {
+    padding: 30px 20px;
+  }
+  
+  .cats-section {
+    height: 150px;
+  }
+  
+  .animated-cat {
+    width: 60px;
+    height: 60px;
+  }
+}
