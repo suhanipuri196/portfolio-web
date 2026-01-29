@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './AboutMe.css';
-import AnimatedCat from './AnimatedCat';
+
 
 const AboutMe = () => {
   return (
@@ -113,36 +113,46 @@ const AboutMe = () => {
         </motion.div>
       </div>
 
-      {/* Animated Cats Section */}
+      {/* Cute Cats Section */}
       <div className="cats-section">
-        <AnimatedCat color="white" delay={0} />
-        <AnimatedCat color="black" delay={0.5} />
-        <motion.div
-          className="pixel-fish"
-          animate={{
-            y: [0, -15, 0],
-            rotate: [0, 5, -5, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+        <motion.div 
+          className="cute-cat"
+          initial={{ opacity: 0, y: 50, rotate: -15 }}
+          whileInView={{ opacity: 1, y: 0, rotate: -5 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, type: "spring" }}
+          whileHover={{ scale: 1.1, rotate: 0 }}
         >
-          🐟
-        </motion.div>
-        <motion.div
-          className="pixel-donut"
-          animate={{
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "linear"
-          }}
+          <motion.img 
+            src={`${process.env.PUBLIC_URL}/cat-black.png`}
+            alt="Cute black cat"
+            animate={{ y: [0, -10, 0] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.div>        
+        <motion.div 
+          className="cute-cat pixel-cat"
+          initial={{ opacity: 0, y: 50, rotate: 15 }}
+          whileInView={{ opacity: 1, y: 0, rotate: 5 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, type: "spring", delay: 0.3 }}
+          whileHover={{ scale: 1.1, rotate: 0 }}
         >
-          🍩
+          <motion.img 
+            src={`${process.env.PUBLIC_URL}/cat-pixel.png`}
+            alt="Cute pixel cat"
+            animate={{ y: [0, -8, 0] }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5
+            }}
+          />
         </motion.div>
       </div>
 

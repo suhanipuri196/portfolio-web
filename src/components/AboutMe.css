@@ -152,12 +152,29 @@
 .cats-section {
   position: relative;
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 30px;
   margin: 60px 0;
   z-index: 2;
+  flex-wrap: wrap;
+}
+
+.cute-cat {
+  cursor: pointer;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+}
+
+.cute-cat img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cute-cat.pixel-cat img {
+  width: 170px;
 }
 
 .checkerboard-divider-bottom {
@@ -200,11 +217,34 @@
   }
   
   .cats-section {
-    height: 150px;
+    min-height: 150px;
+    gap: 20px;
   }
   
   .animated-cat {
     width: 60px;
     height: 60px;
+  }
+  
+  .cute-cat img {
+    width: 100px;
+  }
+  
+  .cute-cat.pixel-cat img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cute-cat img {
+    width: 80px;
+  }
+  
+  .cute-cat.pixel-cat img {
+    width: 90px;
+  }
+  
+  .cats-section {
+    gap: 15px;
   }
 }
