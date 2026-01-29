@@ -1,6 +1,6 @@
 .about-me {
   min-height: 100vh;
-  background: #ff0000;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   position: relative;
   padding: 100px 40px 60px;
   overflow: hidden;
@@ -12,171 +12,291 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #ff0000;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 20, 147, 0.05) 0%, transparent 70%);
   z-index: 0;
 }
 
-.star {
+/* Floating Sparkles */
+.sparkle-star {
   position: absolute;
-  font-size: 24px;
-  color: #ffd700;
+  color: #FFD700;
   z-index: 1;
   pointer-events: none;
+  text-shadow: 0 0 10px #FFD700, 0 0 20px #FF00FF;
 }
 
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.funky-title {
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 900;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: linear-gradient(135deg, #FF00FF 0%, #00FFFF 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(4px 4px 0px rgba(255, 0, 255, 0.5));
+}
+
+.title-underline {
+  width: 200px;
+  height: 6px;
+  background: linear-gradient(90deg, #FF00FF, #00FFFF, #FFD700);
+  margin: 20px auto;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+/* About Content Grid */
 .about-content {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-rows: auto auto;
+  gap: 30px;
   position: relative;
   z-index: 2;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
-.about-card {
+/* Funky Cards Base Style */
+.funky-card {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  border: 2px solid rgba(0, 0, 0, 0.1);
-}
-
-.reliability-card {
-  background: #000;
-  color: white;
-}
-
-.reliability-card .card-content h2 {
-  color: white;
-  margin-bottom: 20px;
-}
-
-.personal-card {
-  background: #fff;
-  color: #000;
-}
-
-.card-label {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.card-image {
-  margin-bottom: 30px;
-}
-
-.illustration-placeholder-about {
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 80px;
-}
-
-.card-content h2 {
-  font-size: clamp(20px, 3vw, 32px);
-  font-weight: 800;
-  line-height: 1.3;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
-}
-
-.card-content p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: inherit;
-  opacity: 0.9;
-}
-
-.profile-section {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  margin: 30px 0;
-}
-
-.profile-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  flex-shrink: 0;
-  border: 3px solid #000;
-}
-
-.facts-section {
-  margin-top: 40px;
-  padding: 30px;
-  background: #1a1a2e;
-  border-radius: 8px;
-  color: white;
-  position: relative;
+  border: 4px solid #000;
   overflow: hidden;
+  box-shadow: 
+    8px 8px 0px #FF00FF,
+    16px 16px 0px #00FFFF;
+  transition: all 0.3s ease;
 }
 
-.fact-label {
-  font-size: 12px;
-  font-weight: 700;
+.funky-card:hover {
+  box-shadow: 
+    12px 12px 0px #FF00FF,
+    24px 24px 0px #00FFFF;
+}
+
+/* Card Header */
+.card-header {
+  background: linear-gradient(135deg, #FF00FF 0%, #FF1493 100%);
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 900;
+  font-family: 'Impact', 'Arial Black', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #ffd700;
-  margin-bottom: 10px;
+  border-bottom: 4px solid #000;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
 }
 
-.facts-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.card-header.purple {
+  background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
 }
 
-.fact-illustration {
+.card-header.gradient {
+  background: linear-gradient(135deg, #00FFFF 0%, #FF00FF 100%);
+}
+
+.header-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.header-dots .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.dot.pink { background: #FF69B4; }
+.dot.cyan { background: #00FFFF; }
+.dot.yellow { background: #FFD700; }
+
+.sparkle-emoji {
+  font-size: 24px;
+}
+
+.fact-number {
+  background: #000;
+  color: #FFD700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* Card Body */
+.card-body {
+  padding: 25px;
+}
+
+.emoji-icon {
   font-size: 60px;
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
+.card-body h2 {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 900;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #FF00FF 0%, #1a1a2e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-body p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Main Card - spans 2 rows on left */
+.main-card {
+  grid-row: span 2;
+}
+
+/* Traits Card */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.trait-item {
+  background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+  border: 3px solid #000;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #FF00FF;
+  transition: all 0.2s ease;
+}
+
+.trait-item:hover {
+  box-shadow: 6px 6px 0px #00FFFF;
+}
+
+.trait-emoji {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.trait-text {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  color: #1a1a2e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Facts Card */
+.facts-body {
+  text-align: center;
+}
+
+.fact-emoji {
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+.fact-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FF1493;
+}
+
+/* Cats Section */
 .cats-section {
   position: relative;
   width: 100%;
-  min-height: 200px;
+  min-height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  margin: 60px 0;
+  gap: 40px;
+  margin: 40px 0;
   z-index: 2;
-  flex-wrap: wrap;
 }
 
 .cute-cat {
   cursor: pointer;
-  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
 }
 
 .cute-cat img {
-  width: 150px;
+  width: 180px;
   height: auto;
   object-fit: contain;
 }
 
 .cute-cat.pixel-cat img {
-  width: 170px;
+  width: 200px;
 }
 
+/* Meow Bubble */
+.meow-bubble {
+  background: #FFD700;
+  color: #000;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: 'Comic Sans MS', 'Chalkboard', cursive;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0px #FF00FF;
+  position: relative;
+}
+
+.meow-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #000;
+}
+
+.meow-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 34px;
+  width: 0;
+  height: 0;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 14px solid #FFD700;
+}
+
+/* Checkerboard */
 .checkerboard-divider-bottom {
   width: 100%;
   height: 60px;
@@ -188,42 +308,76 @@
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(45deg, #000 25%, transparent 25%),
-    linear-gradient(-45deg, #000 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #000 75%),
-    linear-gradient(-45deg, transparent 75%, #000 75%);
+    linear-gradient(45deg, #FF00FF 25%, transparent 25%),
+    linear-gradient(-45deg, #FF00FF 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #FF00FF 75%),
+    linear-gradient(-45deg, transparent 75%, #FF00FF 75%);
   background-size: 40px 40px;
   background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
   animation: checkerboardMove 2s linear infinite;
 }
 
 @keyframes checkerboardMove {
-  0% {
-    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
-  }
-  100% {
-    background-position: 40px 0, 40px 20px, 60px -20px, 20px 0px;
-  }
+  0% { background-position: 0 0, 0 20px, 20px -20px, -20px 0px; }
+  100% { background-position: 40px 0, 40px 20px, 60px -20px, 20px 0px; }
 }
 
+/* Responsive */
 @media (max-width: 968px) {
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .about-me {
+    padding: 80px 25px 40px;
   }
   
-  .about-card {
-    padding: 30px 20px;
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .main-card {
+    grid-row: auto;
+  }
+  
+  .funky-title {
+    font-size: clamp(32px, 8vw, 50px);
   }
   
   .cats-section {
-    min-height: 150px;
     gap: 20px;
+    min-height: 200px;
   }
   
-  .animated-cat {
-    width: 60px;
-    height: 60px;
+  .cute-cat img {
+    width: 130px;
+  }
+  
+  .cute-cat.pixel-cat img {
+    width: 150px;
+  }
+  
+  .meow-bubble {
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me {
+    padding: 60px 15px 30px;
+  }
+  
+  .funky-card {
+    box-shadow: 
+      5px 5px 0px #FF00FF,
+      10px 10px 0px #00FFFF;
+  }
+  
+  .card-body {
+    padding: 18px;
+  }
+  
+  .traits-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   
   .cute-cat img {
@@ -231,20 +385,16 @@
   }
   
   .cute-cat.pixel-cat img {
-    width: 120px;
-  }
-}
-
-@media (max-width: 480px) {
-  .cute-cat img {
-    width: 80px;
-  }
-  
-  .cute-cat.pixel-cat img {
-    width: 90px;
+    width: 110px;
   }
   
   .cats-section {
+    flex-wrap: wrap;
     gap: 15px;
+  }
+  
+  .meow-bubble {
+    font-size: 16px;
+    padding: 10px 16px;
   }
 }
