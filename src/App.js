@@ -19,6 +19,7 @@ function App() {
       <Education />
       <Projects />
       <Skills />
+      <Hobbies />
     </div>
   );
 }
