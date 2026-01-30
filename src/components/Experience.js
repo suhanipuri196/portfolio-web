@@ -46,15 +46,30 @@ const Experience = () => {
             <motion.div
               key={index}
               className="experience-item"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.3,
+                type: "spring",
+                stiffness: 100
+              }}
             >
               <motion.div 
                 className="timeline-dot"
-                whileHover={{ scale: 1.3 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                whileHover={{ scale: 1.5, rotate: 180 }}
+                animate={{
+                  boxShadow: [
+                    "0 0 20px rgba(255, 0, 255, 0.8)",
+                    "0 0 40px rgba(0, 255, 255, 0.8)",
+                    "0 0 20px rgba(255, 0, 255, 0.8)"
+                  ]
+                }}
+                transition={{ 
+                  boxShadow: { duration: 2, repeat: Infinity },
+                  scale: { type: "spring", stiffness: 300 }
+                }}
               />
               <div className="experience-content">
                 <motion.h3 

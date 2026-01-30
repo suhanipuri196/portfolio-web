@@ -90,18 +90,18 @@ const Navigation = () => {
             Skills
           </motion.button>
           <motion.button 
-            onClick={() => scrollToSection('hobbies')}
+            onClick={() => scrollToSection('when-not-working')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Hobbies
+            Life
           </motion.button>
         </div>
         
         <div className="nav-right">
           <motion.button 
             className="cta-button"
-            onClick={() => scrollToSection('hobbies')}
+            onClick={() => scrollToSection('when-not-working')}
             whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 0, 0, 0.5)" }}
             whileTap={{ scale: 0.95 }}
           >

@@ -7,7 +7,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-import Hobbies from './components/Hobbies';
+import WhenNotWorking from './components/WhenNotWorking';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <Education />
       <Projects />
       <Skills />
-      <Hobbies />
+      <WhenNotWorking />
     </div>
   );
 }

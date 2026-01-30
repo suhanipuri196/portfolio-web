@@ -53,6 +53,87 @@ const HangingLamp = ({ color, size, right, delay, duration, cordLength }) => {
   );
 };
 
+// Funky Cat Scroll Indicator Component
+const CatScrollIndicator = () => {
+  return (
+    <motion.div 
+      className="scroll-indicator"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.5, duration: 0.8 }}
+    >
+      <motion.div 
+        className="cat-container"
+        animate={{ 
+          y: [0, -10, 0],
+          rotate: [0, -5, 5, 0]
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        <div className="pixel-cat">
+          <div className="cat-ears">
+            <span className="ear left"></span>
+            <span className="ear right"></span>
+          </div>
+          <div className="cat-face">
+            <span className="cat-eye left"></span>
+            <span className="cat-eye right"></span>
+            <span className="cat-nose"></span>
+            <div className="cat-whiskers">
+              <span className="whisker left-top"></span>
+              <span className="whisker left-bottom"></span>
+              <span className="whisker right-top"></span>
+              <span className="whisker right-bottom"></span>
+            </div>
+          </div>
+          <div className="cat-body">
+            <motion.div 
+              className="cat-tail"
+              animate={{ rotate: [0, 20, -20, 0] }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </div>
+        </div>
+      </motion.div>
+      <motion.div 
+        className="scroll-arrows"
+        animate={{ y: [0, 10, 0] }}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        <span className="arrow">▼</span>
+        <span className="arrow">▼</span>
+        <span className="arrow">▼</span>
+      </motion.div>
+      <motion.span 
+        className="scroll-text"
+        animate={{ 
+          opacity: [0.5, 1, 0.5],
+          scale: [1, 1.05, 1]
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        SCROLL DOWN
+      </motion.span>
+    </motion.div>
+  );
+};
+
 const MainPage = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -61,32 +142,6 @@ const MainPage = () => {
       transition: {
         staggerChildren: 0.3,
         delayChildren: 0.2
-      }
-    }
-  };
-
-  const slideInLeft = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
-    }
-  };
-
-  const slideInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 80,
-        damping: 12
       }
     }
   };
@@ -109,7 +164,7 @@ const MainPage = () => {
     <section id="main" className="main-page">
       <div 
         className="background-image"
-        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/landing-background.png)` }}
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/cyberpunk-background.png)` }}
       ></div>
       <div className="background-overlay"></div>
       
@@ -139,28 +194,33 @@ const MainPage = () => {
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="hero-text" variants={slideInLeft}>
+        <motion.div className="hero-text">
+          {/* Hello, I'm - scrolls vertically downwards */}
           <motion.span 
             className="greeting"
-            initial={{ opacity: 0, y: -30 }}
+            initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
               type: "spring",
-              stiffness: 120,
-              delay: 0.5 
+              stiffness: 50,
+              damping: 12,
+              delay: 0.3,
+              duration: 1.5
             }}
           >
             Hello, I'm
           </motion.span>
+          {/* Suhani Puri - scrolls horizontally from left to right */}
           <motion.h1
             className="name-title"
-            initial={{ opacity: 0, x: -150, skewX: 10 }}
-            animate={{ opacity: 1, x: 0, skewX: 0 }}
+            initial={{ opacity: 0, x: -300 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ 
               type: "spring",
-              stiffness: 60,
-              damping: 12,
-              delay: 0.7
+              stiffness: 40,
+              damping: 15,
+              delay: 0.8,
+              duration: 2
             }}
           >
             SUHANI PURI
@@ -194,17 +254,8 @@ const MainPage = () => {
           </div>
         </motion.div>
 
-        <motion.div 
-          className="year-indicator"
-          variants={slideInUp}
-          whileHover={{ 
-            scale: 1.1, 
-            rotate: 0,
-            transition: { type: "spring", stiffness: 400 }
-          }}
-        >
-          2026
-        </motion.div>
+        {/* Funky Cat Scroll Indicator */}
+        <CatScrollIndicator />
       </motion.div>
     </section>
   );

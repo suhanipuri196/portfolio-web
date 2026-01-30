@@ -54,26 +54,62 @@ const Skills = () => {
             <motion.div
               key={catIndex}
               className="skill-category"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 80, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: catIndex * 0.2 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: catIndex * 0.2,
+                type: "spring",
+                stiffness: 80
+              }}
             >
-              <h3 className="category-title">{category.category}</h3>
+              <motion.h3 
+                className="category-title"
+                whileHover={{ scale: 1.05 }}
+              >
+                {category.category}
+              </motion.h3>
               <div className="skills-list">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
                     className="skill-item"
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: catIndex * 0.2 + skillIndex * 0.1 }}
+                    transition={{ 
+                      delay: catIndex * 0.2 + skillIndex * 0.1,
+                      type: "spring",
+                      stiffness: 100
+                    }}
+                    whileHover={{ x: 10 }}
                   >
                     <div className="skill-header">
-                      <span className="skill-icon">{skill.icon}</span>
+                      <motion.span 
+                        className="skill-icon"
+                        animate={{ 
+                          rotate: [0, 10, -10, 0],
+                          scale: [1, 1.1, 1]
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          delay: skillIndex * 0.2
+                        }}
+                      >
+                        {skill.icon}
+                      </motion.span>
                       <span className="skill-name">{skill.name}</span>
-                      <span className="skill-percentage">{skill.level}%</span>
+                      <motion.span 
+                        className="skill-percentage"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: catIndex * 0.2 + skillIndex * 0.1 + 0.5 }}
+                      >
+                        {skill.level}%
+                      </motion.span>
                     </div>
                     <div className="skill-bar-container">
                       <motion.div
@@ -81,9 +117,10 @@ const Skills = () => {
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1, delay: catIndex * 0.2 + skillIndex * 0.1, ease: "easeOut" }}
-                        style={{
-                          background: `linear-gradient(90deg, #ff0000, #ff6b6b)`
+                        transition={{ 
+                          duration: 1.2, 
+                          delay: catIndex * 0.2 + skillIndex * 0.1, 
+                          ease: "easeOut" 
                         }}
                       />
                     </div>

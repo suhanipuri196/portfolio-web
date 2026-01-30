@@ -15,17 +15,7 @@ const Education = () => {
         "Relevant coursework in React, Node.js, and Design"
       ]
     },
-    {
-      degree: "Web Development Bootcamp",
-      institution: "Coding Academy",
-      period: "2018",
-      description: "Intensive program covering modern web technologies and best practices.",
-      highlights: [
-        "Full-stack development",
-        "Agile methodologies",
-        "Portfolio projects"
-      ]
-    }
+   
   ];
 
   return (
@@ -46,16 +36,27 @@ const Education = () => {
             <motion.div
               key={index}
               className="education-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 80, rotateX: -20 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.05, y: -10 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.3,
+                type: "spring",
+                stiffness: 80
+              }}
+              whileHover={{ 
+                scale: 1.03, 
+                y: -15,
+                transition: { type: "spring", stiffness: 300 }
+              }}
             >
               <motion.div 
                 className="card-icon"
                 animate={{
-                  rotate: [0, 10, -10, 0],
+                  y: [0, -10, 0],
+                  rotate: [0, 5, -5, 0],
+                  scale: [1, 1.1, 1]
                 }}
                 transition={{
                   duration: 3,
