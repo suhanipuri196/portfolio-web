@@ -21,22 +21,11 @@ const Experience = () => {
       period: "December 2024 - February 2025",
       description: "Built custom websites and web applications for various clients.",
       achievements: [
-        "Created 50+ websites",
+        "Analyzed large-scale labor market and education-sector data to evaluate historical performance and identify trends impacting FDI decision-making",
         "Implemented modern design patterns",
         "Collaborated with designers"
       ]
     },
-    {
-      title: "Junior Developer",
-      company: "Startup",
-      period: "2018 - 2020",
-      description: "Started my journey in web development, learning and growing with the team.",
-      achievements: [
-        "Learned modern frameworks",
-        "Contributed to 10+ projects",
-        "Gained valuable experience"
-      ]
-    }
   ];
 
   return (

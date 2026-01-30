@@ -73,10 +73,7 @@ const AboutMe = () => {
             </motion.div>
             <h2>HI, I'M SUHANI!</h2>
             <p>
-              A creative developer who loves turning ideas into reality through code. 
-              I'm passionate about building beautiful, user-friendly digital experiences 
-              that make people smile. When I'm not coding, you'll find me exploring new 
-              technologies, designing fun projects, and always learning something new!
+            Hey, I’m Suhani. I study Economics and Mathematics and love exploring data—turning numbers into insights that actually make sense. I’m currently interning with the analytics team at Urban Company, have worked on research at Invest India, and am also working on a research paper of my own. Through HPAIR, I’ve connected with students from around the world and seen how big ideas take shape. I’m curious, thoughtful, and approach challenges with focus, clarity, and a dash of humor. When I’m not working, you’ll find me playing guitar, running or hitting the gym, keeping up with F1 racing, following world affairs, or experimenting with fashion.
             </p>
           </div>
         </motion.div>

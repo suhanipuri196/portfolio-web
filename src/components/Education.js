@@ -5,12 +5,12 @@ import './Education.css';
 const Education = () => {
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University Name",
-      period: "2014 - 2018",
-      description: "Focused on web development, software engineering, and user interface design.",
+      degree: "Bachelor of Arts in Economics and Mathematics",
+      institution: "University of Delhi",
+      period: "2022 - 2026",
+      description: "Key Courses: ",
       highlights: [
-        "Dean's List for 3 semesters",
+        "Econometrics",
         "Graduated with honors",
         "Relevant coursework in React, Node.js, and Design"
       ]
