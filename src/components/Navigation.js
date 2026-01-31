@@ -30,19 +30,12 @@ const Navigation = () => {
       <div className="nav-container">
         <div className="nav-left">
           <motion.div 
-            className="availability-indicator"
-            animate={{ 
-              scale: [1, 1.1, 1],
-              opacity: [1, 0.7, 1]
-            }}
-            transition={{ 
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
+            className="logo"
+            whileHover={{ scale: 1.1, rotate: -5 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => scrollToSection('main')}
           >
-            <span className="pulse-dot"></span>
-            <span>Available for projects</span>
+            SP
           </motion.div>
         </div>
         
@@ -59,7 +52,7 @@ const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            About me
+            About
           </motion.button>
           <motion.button 
             onClick={() => scrollToSection('experience')}
@@ -67,20 +60,6 @@ const Navigation = () => {
             whileTap={{ scale: 0.95 }}
           >
             Experience
-          </motion.button>
-          <motion.button 
-            onClick={() => scrollToSection('education')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Education
-          </motion.button>
-          <motion.button 
-            onClick={() => scrollToSection('projects')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Projects
           </motion.button>
           <motion.button 
             onClick={() => scrollToSection('skills')}
@@ -99,14 +78,17 @@ const Navigation = () => {
         </div>
         
         <div className="nav-right">
-          <motion.button 
+          <motion.a 
             className="cta-button"
-            onClick={() => scrollToSection('when-not-working')}
-            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 0, 0, 0.5)" }}
+            href="https://drive.google.com/file/d/12Iumv6UEPX773D8NSEkp6qtqw4J1fExP/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            DISCUSS THE PROJECT
-          </motion.button>
+            <span className="btn-icon">↓</span>
+            RESUME
+          </motion.a>
         </div>
       </div>
     </motion.nav>
