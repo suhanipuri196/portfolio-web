@@ -86,7 +86,7 @@ const AboutMe = () => {
               I'm currently interning with the analytics team at <span className="highlight">Urban Company</span>, have worked on research at <span className="highlight">Invest India</span>, and am also working on a research paper of my own. Through <span className="highlight">HPAIR</span>, I've connected with students from around the world and seen how big ideas take shape.
             </p>
             <p className="about-text">
-              I'm curious, thoughtful, and approach challenges with focus, clarity, and a dash of humor. When I'm not working, you'll find me playing guitar, running or hitting the gym, keeping up with F1 racing, following world affairs, or experimenting with fashion.
+              I'm curious, thoughtful, and approach challenges with focus, clarity, and a dash of humor. When I'm not working, you'll find me playing guitar, running or hitting the gym, keeping up with F1 racing, following world affairs, or experimenting with fashion and lifestyle.
             </p>
           </motion.div>
         </div>
