@@ -16,14 +16,16 @@ const Experience = () => {
       ] 
     },
     {
-      title: "Research and Data Analyst Intern ",
+      title: "Research and Data Analyst Intern",
       company: "Invest India",
       period: "December 2024 - February 2025",
-      description: "Built custom websites and web applications for various clients.",
+      description: "Analyzed data and conducted research to support FDI decision-making and investment strategy.",
       achievements: [
         "Analyzed large-scale labor market and education-sector data to evaluate historical performance and identify trends impacting FDI decision-making",
-        "Implemented modern design patterns",
-        "Collaborated with designers"
+        "Built interactive Power BI dashboards to assess operational feasibility and identify 12+ strategic hotspots across 9+ states, supporting investment planning",
+        "Translated complex datasets into clear insights and recommendations for internal stakeholders to guide policy and investment strategy",
+        "Conducted exploratory data analysis on 3 global markets (India, USA, Europe) to identify future growth opportunities",
+        "Synthesized findings into a comprehensive report for internal stakeholders to guide policy and investment strategy"
       ]
     },
   ];
