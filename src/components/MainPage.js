@@ -231,9 +231,7 @@ const MainPage = () => {
           </div>
           <div className="info-box-content">
             <p>
-              A passionate developer and creative thinker who loves building 
-              beautiful digital experiences. I blend creativity with code to 
-              bring ideas to life and make the web a more interesting place.
+              A sharp, curious problem solver who enjoys turning complex challenges into clear, actionable insights. I combine analytical rigor with creative thinking to build strategies that deliver real impact.
             </p>
             <div className="barcode"></div>
           </div>

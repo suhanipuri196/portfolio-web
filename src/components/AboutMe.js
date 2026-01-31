@@ -59,7 +59,7 @@ const AboutMe = () => {
             <div className="frame-border">
               <div className="frame-inner">
                 <img 
-                  src={`${process.env.PUBLIC_URL}/girl-illustration.png`} 
+                  src={`${process.env.PUBLIC_URL}/suhani-profile.png`} 
                   alt="Suhani Puri" 
                   className="profile-image"
                 />
@@ -172,32 +172,7 @@ const AboutMe = () => {
         </div>
       </div>
 
-      {/* Fun Facts Card - Below */}
-      <motion.div 
-        className="funky-card facts-card facts-section"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, type: "spring", delay: 0.4 }}
-        whileHover={{ scale: 1.02 }}
-      >
-        <div className="card-header gradient">
-          <span>FUN FACTS</span>
-          <span className="fact-number">#1</span>
-        </div>
-        <div className="card-body facts-body">
-          <motion.div 
-            className="fact-emoji"
-            animate={{ y: [0, -15, 0], rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            🐱
-          </motion.div>
-          <p className="fact-text">I'm obsessed with cats and everything cute!</p>
-        </div>
-      </motion.div>
-
-      {/* Cute Cats Section */}
+      {/* Cute Cat Section */}
       <motion.div 
         className="cats-section"
         initial={{ opacity: 0 }}
@@ -205,44 +180,18 @@ const AboutMe = () => {
         viewport={{ once: true }}
       >
         <motion.div 
-          className="cute-cat"
-          initial={{ opacity: 0, x: -100, rotate: -20 }}
-          whileInView={{ opacity: 1, x: 0, rotate: -8 }}
+          className="cute-cat pixel-cat"
+          initial={{ opacity: 0, y: 50, scale: 0.8 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, type: "spring" }}
-          whileHover={{ scale: 1.15, rotate: 0 }}
-        >
-          <motion.img 
-            src={`${process.env.PUBLIC_URL}/cat-black.png`}
-            alt="Cute black cat"
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </motion.div>
-        
-        <motion.div 
-          className="meow-bubble"
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, type: "spring" }}
-        >
-          MEOW! 🐾
-        </motion.div>
-        
-        <motion.div 
-          className="cute-cat pixel-cat"
-          initial={{ opacity: 0, x: 100, rotate: 20 }}
-          whileInView={{ opacity: 1, x: 0, rotate: 8 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, type: "spring", delay: 0.3 }}
-          whileHover={{ scale: 1.15, rotate: 0 }}
+          whileHover={{ scale: 1.1, rotate: 5 }}
         >
           <motion.img 
             src={`${process.env.PUBLIC_URL}/cat-pixel.png`}
             alt="Cute pixel cat"
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
       </motion.div>

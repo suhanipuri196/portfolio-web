@@ -3,38 +3,43 @@ import { motion } from 'framer-motion';
 import './Skills.css';
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      category: "Frontend",
-      skills: [
-        { name: "React", level: 95, icon: "⚛️" },
-        { name: "JavaScript", level: 90, icon: "📜" },
-        { name: "TypeScript", level: 85, icon: "📘" },
-        { name: "HTML/CSS", level: 95, icon: "🎨" },
-        { name: "Vue.js", level: 75, icon: "💚" }
-      ]
-    },
-    {
-      category: "Backend",
-      skills: [
-        { name: "Node.js", level: 88, icon: "🟢" },
-        { name: "Express", level: 85, icon: "🚂" },
-        { name: "Python", level: 80, icon: "🐍" },
-        { name: "MongoDB", level: 82, icon: "🍃" },
-        { name: "PostgreSQL", level: 78, icon: "🐘" }
-      ]
-    },
-    {
-      category: "Tools & Others",
-      skills: [
-        { name: "Git", level: 90, icon: "🔀" },
-        { name: "Docker", level: 75, icon: "🐳" },
-        { name: "AWS", level: 70, icon: "☁️" },
-        { name: "Figma", level: 85, icon: "🎭" },
-        { name: "Webpack", level: 80, icon: "📦" }
-      ]
-    }
+  const skills = [
+    { name: "Python", icon: "🐍", color: "#3776AB" },
+    { name: "R", icon: "📊", color: "#276DC3" },
+    { name: "SQL", icon: "🗃️", color: "#F29111" },
+    { name: "Tableau", icon: "📈", color: "#E97627" },
+    { name: "Power BI", icon: "⚡", color: "#F2C811" },
+    { name: "Excel", icon: "📗", color: "#217346" },
+    { name: "Google Analytics", icon: "📉", color: "#E37400" },
+    { name: "Data Analysis", icon: "🔍", color: "#9C27B0" },
+    { name: "Data Visualization", icon: "📊", color: "#00BCD4" },
+    { name: "Statistical Analysis", icon: "📐", color: "#FF5722" },
+    { name: "Automation", icon: "⚙️", color: "#607D8B" }
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
 
   return (
     <section id="skills" className="skills-section">
@@ -49,87 +54,44 @@ const Skills = () => {
           SKILLS
         </motion.h2>
         
-        <div className="skills-grid">
-          {skillCategories.map((category, catIndex) => (
+        <motion.div 
+          className="skills-container"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {skills.map((skill, index) => (
             <motion.div
-              key={catIndex}
-              className="skill-category"
-              initial={{ opacity: 0, y: 80, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ 
-                duration: 0.8, 
-                delay: catIndex * 0.2,
-                type: "spring",
-                stiffness: 80
+              key={index}
+              className="skill-card"
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.08,
+                y: -10,
+                boxShadow: `0 20px 40px ${skill.color}40`
               }}
+              style={{ '--skill-color': skill.color }}
             >
-              <motion.h3 
-                className="category-title"
-                whileHover={{ scale: 1.05 }}
+              <motion.span 
+                className="skill-icon"
+                animate={{ 
+                  rotate: [0, 5, -5, 0],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: index * 0.3
+                }}
               >
-                {category.category}
-              </motion.h3>
-              <div className="skills-list">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    className="skill-item"
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ 
-                      delay: catIndex * 0.2 + skillIndex * 0.1,
-                      type: "spring",
-                      stiffness: 100
-                    }}
-                    whileHover={{ x: 10 }}
-                  >
-                    <div className="skill-header">
-                      <motion.span 
-                        className="skill-icon"
-                        animate={{ 
-                          rotate: [0, 10, -10, 0],
-                          scale: [1, 1.1, 1]
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Infinity,
-                          delay: skillIndex * 0.2
-                        }}
-                      >
-                        {skill.icon}
-                      </motion.span>
-                      <span className="skill-name">{skill.name}</span>
-                      <motion.span 
-                        className="skill-percentage"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: catIndex * 0.2 + skillIndex * 0.1 + 0.5 }}
-                      >
-                        {skill.level}%
-                      </motion.span>
-                    </div>
-                    <div className="skill-bar-container">
-                      <motion.div
-                        className="skill-bar"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ 
-                          duration: 1.2, 
-                          delay: catIndex * 0.2 + skillIndex * 0.1, 
-                          ease: "easeOut" 
-                        }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                {skill.icon}
+              </motion.span>
+              <span className="skill-name">{skill.name}</span>
+              <div className="skill-glow" style={{ background: skill.color }} />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

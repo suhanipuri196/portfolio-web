@@ -314,93 +314,27 @@
   letter-spacing: 1px;
 }
 
-/* Facts Card - Now Below */
-.facts-section {
-  max-width: 500px;
-  margin: 0 auto 40px;
-  position: relative;
-  z-index: 2;
-}
-
-.facts-body {
-  text-align: center;
-}
-
-.fact-emoji {
-  font-size: 70px;
-  margin-bottom: 15px;
-}
-
-.fact-text {
-  font-size: 18px;
-  font-weight: 700;
-  color: #FF1493;
-}
-
 /* Cats Section */
 .cats-section {
   position: relative;
   width: 100%;
-  min-height: 250px;
+  min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  margin: 40px 0;
+  margin: 60px 0;
   z-index: 2;
 }
 
 .cute-cat {
   cursor: pointer;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
-}
-
-.cute-cat img {
-  width: 180px;
-  height: auto;
-  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(255, 0, 255, 0.3));
 }
 
 .cute-cat.pixel-cat img {
-  width: 200px;
-}
-
-/* Meow Bubble */
-.meow-bubble {
-  background: #FFD700;
-  color: #000;
-  padding: 15px 25px;
-  border-radius: 50px;
-  font-size: 24px;
-  font-weight: 900;
-  font-family: 'Comic Sans MS', 'Chalkboard', cursive;
-  border: 4px solid #000;
-  box-shadow: 6px 6px 0px #FF00FF;
-  position: relative;
-}
-
-.meow-bubble::before {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 30px;
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 20px solid #000;
-}
-
-.meow-bubble::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 34px;
-  width: 0;
-  height: 0;
-  border-left: 11px solid transparent;
-  border-right: 11px solid transparent;
-  border-top: 14px solid #FFD700;
+  width: 320px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Checkerboard */
@@ -467,21 +401,11 @@
   }
   
   .cats-section {
-    gap: 20px;
-    min-height: 200px;
-  }
-  
-  .cute-cat img {
-    width: 130px;
+    min-height: 220px;
   }
   
   .cute-cat.pixel-cat img {
-    width: 150px;
-  }
-  
-  .meow-bubble {
-    font-size: 18px;
-    padding: 12px 20px;
+    width: 250px;
   }
 }
 
@@ -515,21 +439,12 @@
     height: 20px;
   }
   
-  .cute-cat img {
-    width: 100px;
-  }
-  
   .cute-cat.pixel-cat img {
-    width: 110px;
+    width: 200px;
   }
   
   .cats-section {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  
-  .meow-bubble {
-    font-size: 16px;
-    padding: 10px 16px;
+    min-height: 180px;
+    margin: 40px 0;
   }
 }
