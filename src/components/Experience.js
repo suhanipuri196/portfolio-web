@@ -7,12 +7,13 @@ const Experience = () => {
     {
       title: "Data Analyst Intern",
       company: "Urban Company",
-      period: "February 2026-Present",
-      description: "Analyzing data and providing insights to the team to improve the customer experience.",
+      period: "February 2026 - Present",
+      description: "Supporting daily operations through data analysis and reporting for city and category teams.",
       achievements: [
-        "Developed a data analysis tool",
-        "Led a team of 5 developers",
-        "Improved performance by 40%"
+        "Supported daily operations by analyzing data, managing trackers, and ensuring timely closure of high-priority cases with city and category teams",
+        "Wrote SQL queries and used Excel to extract, clean, and validate datasets while ensuring KPI accuracy",
+        "Built structured, reusable Excel reports and dashboards for operational and performance tracking",
+        "Assisted senior analysts with ad-hoc analysis and executive-ready summaries to support decision-making"
       ] 
     },
     {
