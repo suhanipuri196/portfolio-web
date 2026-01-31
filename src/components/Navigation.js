@@ -80,7 +80,7 @@ const Navigation = () => {
         <div className="nav-right">
           <motion.a 
             className="cta-button"
-            href="https://drive.google.com/file/d/12Iumv6UEPX773D8NSEkp6qtqw4J1fExP/view?usp=sharing"
+            href="https://drive.google.com/file/d/13Ztnk7E_S4StJ1zeaUQieUVh7gTB2pnV/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

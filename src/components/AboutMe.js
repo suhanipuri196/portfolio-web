@@ -46,128 +46,48 @@ const AboutMe = () => {
       </motion.div>
 
       <div className="about-content">
-        {/* Picture Frame - Left Side */}
+        {/* Picture - Left Side */}
         <motion.div 
           className="picture-frame-container"
-          initial={{ opacity: 0, x: -100, rotate: -5 }}
-          whileInView={{ opacity: 1, x: 0, rotate: -3 }}
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, type: "spring" }}
-          whileHover={{ rotate: 0, scale: 1.02 }}
         >
-          <div className="picture-frame">
-            <div className="frame-border">
-              <div className="frame-inner">
-                <img 
-                  src={`${process.env.PUBLIC_URL}/suhani-profile.png`} 
-                  alt="Suhani Puri" 
-                  className="profile-image"
-                />
-              </div>
-              <div className="frame-corner top-left"></div>
-              <div className="frame-corner top-right"></div>
-              <div className="frame-corner bottom-left"></div>
-              <div className="frame-corner bottom-right"></div>
-            </div>
-            <motion.div 
-              className="frame-glow"
-              animate={{ 
-                boxShadow: [
-                  "0 0 30px rgba(255, 0, 255, 0.5)",
-                  "0 0 50px rgba(0, 255, 255, 0.5)",
-                  "0 0 30px rgba(255, 0, 255, 0.5)"
-                ]
-              }}
-              transition={{ duration: 3, repeat: Infinity }}
-            />
-          </div>
           <motion.div 
-            className="frame-label"
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            className="picture-frame"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            SUHANI PURI
+            <img 
+              src={`${process.env.PUBLIC_URL}/suhani-profile.png`} 
+              alt="Suhani Puri" 
+              className="profile-image"
+            />
+            <div className="frame-accent" />
           </motion.div>
         </motion.div>
 
         {/* Text Content - Right Side */}
         <div className="about-text-content">
-          {/* Main About Card */}
           <motion.div 
-            className="funky-card main-card"
-            initial={{ opacity: 0, x: 100, rotate: 3 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 2 }}
+            className="about-card"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring", delay: 0.2 }}
-            whileHover={{ rotate: 0, scale: 1.02 }}
           >
-            <div className="card-header">
-              <span>WHO AM I?</span>
-              <div className="header-dots">
-                <span className="dot pink"></span>
-                <span className="dot cyan"></span>
-                <span className="dot yellow"></span>
-              </div>
-            </div>
-            <div className="card-body">
-              <h2>HI, I'M SUHANI!</h2>
-              <p>
-              Hey, I'm Suhani. I study Economics and Mathematics and love exploring data—turning numbers into insights that actually make sense. I'm currently interning with the analytics team at Urban Company, have worked on research at Invest India, and am also working on a research paper of my own. Through HPAIR, I've connected with students from around the world and seen how big ideas take shape. I'm curious, thoughtful, and approach challenges with focus, clarity, and a dash of humor. When I'm not working, you'll find me playing guitar, running or hitting the gym, keeping up with F1 racing, following world affairs, or experimenting with fashion.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Skills/Traits Card */}
-          <motion.div 
-            className="funky-card traits-card"
-            initial={{ opacity: 0, x: 100, rotate: -2 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, type: "spring", delay: 0.4 }}
-            whileHover={{ rotate: 0, scale: 1.02 }}
-          >
-            <div className="card-header purple">
-              <span>MY SUPERPOWERS</span>
-              <motion.span 
-                className="sparkle-emoji"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              >
-                ✨
-              </motion.span>
-            </div>
-            <div className="card-body">
-              <div className="traits-grid">
-                <motion.div 
-                  className="trait-item"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                >
-                  <span className="trait-emoji">🎨</span>
-                  <span className="trait-text">Creative</span>
-                </motion.div>
-                <motion.div 
-                  className="trait-item"
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                >
-                  <span className="trait-emoji">💡</span>
-                  <span className="trait-text">Innovative</span>
-                </motion.div>
-                <motion.div 
-                  className="trait-item"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                >
-                  <span className="trait-emoji">🚀</span>
-                  <span className="trait-text">Fast Learner</span>
-                </motion.div>
-                <motion.div 
-                  className="trait-item"
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                >
-                  <span className="trait-emoji">🤝</span>
-                  <span className="trait-text">Team Player</span>
-                </motion.div>
-              </div>
-            </div>
+            <h2 className="about-greeting">Hi, I'm Suhani</h2>
+            <div className="about-divider" />
+            <p className="about-text">
+              I study <span className="highlight">Economics</span> and <span className="highlight">Mathematics</span> and love exploring data—turning numbers into insights that actually make sense.
+            </p>
+            <p className="about-text">
+              I'm currently interning with the analytics team at <span className="highlight">Urban Company</span>, have worked on research at <span className="highlight">Invest India</span>, and am also working on a research paper of my own. Through <span className="highlight">HPAIR</span>, I've connected with students from around the world and seen how big ideas take shape.
+            </p>
+            <p className="about-text">
+              I'm curious, thoughtful, and approach challenges with focus, clarity, and a dash of humor. When I'm not working, you'll find me playing guitar, running or hitting the gym, keeping up with F1 racing, following world affairs, or experimenting with fashion.
+            </p>
           </motion.div>
         </div>
       </div>

@@ -77,241 +77,78 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
 }
 
 .picture-frame {
   position: relative;
-  padding: 15px;
-}
-
-.frame-border {
-  background: linear-gradient(135deg, #FFD700 0%, #FF00FF 50%, #00FFFF 100%);
-  padding: 8px;
-  position: relative;
-}
-
-.frame-inner {
-  background: #000;
-  padding: 10px;
-  border: 4px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .profile-image {
-  width: 320px;
-  height: 400px;
+  width: 350px;
+  height: 450px;
   object-fit: cover;
   object-position: center top;
   display: block;
-  filter: saturate(1.1) contrast(1.05);
+  filter: saturate(1.05) contrast(1.02);
+  border-radius: 8px;
 }
 
-/* Frame Corners */
-.frame-corner {
+.frame-accent {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  border: 4px solid #FFD700;
-}
-
-.frame-corner.top-left {
-  top: -5px;
-  left: -5px;
-  border-right: none;
-  border-bottom: none;
-}
-
-.frame-corner.top-right {
-  top: -5px;
-  right: -5px;
-  border-left: none;
-  border-bottom: none;
-}
-
-.frame-corner.bottom-left {
-  bottom: -5px;
-  left: -5px;
-  border-right: none;
-  border-top: none;
-}
-
-.frame-corner.bottom-right {
-  bottom: -5px;
-  right: -5px;
-  border-left: none;
-  border-top: none;
-}
-
-.frame-glow {
-  position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.frame-label {
-  background: linear-gradient(135deg, #FF00FF 0%, #00FFFF 100%);
-  color: #000;
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: 900;
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  border: 3px solid #000;
-  box-shadow: 5px 5px 0px #000;
+  height: 6px;
+  background: linear-gradient(90deg, #FF00FF, #00FFFF, #FFD700);
 }
 
 /* Text Content - Right Side */
 .about-text-content {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: center;
+  height: 100%;
 }
 
-/* Funky Cards Base Style */
-.funky-card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 4px solid #000;
-  overflow: hidden;
-  box-shadow: 
-    8px 8px 0px #FF00FF,
-    16px 16px 0px #00FFFF;
-  transition: all 0.3s ease;
+/* About Card */
+.about-card {
+  padding: 10px 0;
 }
 
-.funky-card:hover {
-  box-shadow: 
-    12px 12px 0px #FF00FF,
-    24px 24px 0px #00FFFF;
-}
-
-/* Card Header */
-.card-header {
-  background: linear-gradient(135deg, #FF00FF 0%, #FF1493 100%);
+.about-greeting {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
   color: #fff;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 900;
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-bottom: 4px solid #000;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  letter-spacing: -1px;
 }
 
-.card-header.purple {
-  background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
+.about-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FF00FF, #00FFFF);
+  margin-bottom: 30px;
+  border-radius: 2px;
 }
 
-.card-header.gradient {
-  background: linear-gradient(135deg, #00FFFF 0%, #FF00FF 100%);
+.about-text {
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 24px;
+  font-weight: 400;
 }
 
-.header-dots {
-  display: flex;
-  gap: 8px;
+.about-text:last-child {
+  margin-bottom: 0;
 }
 
-.header-dots .dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, 0.3);
-}
-
-.dot.pink { background: #FF69B4; }
-.dot.cyan { background: #00FFFF; }
-.dot.yellow { background: #FFD700; }
-
-.sparkle-emoji {
-  font-size: 24px;
-}
-
-.fact-number {
-  background: #000;
-  color: #FFD700;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-}
-
-/* Card Body */
-.card-body {
-  padding: 25px;
-}
-
-.emoji-icon {
-  font-size: 60px;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.card-body h2 {
-  font-size: clamp(20px, 3vw, 28px);
-  font-weight: 900;
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  color: #1a1a2e;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #FF00FF 0%, #1a1a2e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.card-body p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #333;
-  font-weight: 500;
-}
-
-/* Main Card */
-.main-card {
-  /* No longer spans rows */
-}
-
-/* Traits Card */
-.traits-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-.trait-item {
-  background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
-  border: 3px solid #000;
-  padding: 15px;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 4px 4px 0px #FF00FF;
-  transition: all 0.2s ease;
-}
-
-.trait-item:hover {
-  box-shadow: 6px 6px 0px #00FFFF;
-}
-
-.trait-emoji {
-  font-size: 32px;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.trait-text {
-  font-size: 14px;
-  font-weight: 800;
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  color: #1a1a2e;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.about-text .highlight {
+  color: #00FFFF;
+  font-weight: 600;
 }
 
 /* Cats Section */
@@ -367,7 +204,7 @@
 @media (max-width: 1100px) {
   .about-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 50px;
   }
   
   .picture-frame-container {
@@ -375,8 +212,17 @@
   }
   
   .profile-image {
-    width: 280px;
-    height: 350px;
+    width: 320px;
+    height: 400px;
+  }
+  
+  .about-text-content {
+    text-align: center;
+  }
+  
+  .about-divider {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -390,14 +236,17 @@
   }
   
   .profile-image {
-    width: 240px;
-    height: 300px;
+    width: 280px;
+    height: 350px;
   }
   
-  .frame-label {
-    font-size: 14px;
-    padding: 10px 20px;
-    letter-spacing: 2px;
+  .about-greeting {
+    font-size: clamp(32px, 6vw, 42px);
+  }
+  
+  .about-text {
+    font-size: 16px;
+    line-height: 1.7;
   }
   
   .cats-section {
@@ -414,29 +263,18 @@
     padding: 60px 15px 30px;
   }
   
-  .funky-card {
-    box-shadow: 
-      5px 5px 0px #FF00FF,
-      10px 10px 0px #00FFFF;
-  }
-  
-  .card-body {
-    padding: 18px;
-  }
-  
-  .traits-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  
   .profile-image {
-    width: 200px;
-    height: 250px;
+    width: 240px;
+    height: 300px;
   }
   
-  .frame-corner {
-    width: 20px;
-    height: 20px;
+  .about-greeting {
+    font-size: 28px;
+  }
+  
+  .about-text {
+    font-size: 15px;
+    margin-bottom: 18px;
   }
   
   .cute-cat.pixel-cat img {
