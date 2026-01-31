@@ -53,8 +53,8 @@ const HangingLamp = ({ color, size, right, delay, duration, cordLength }) => {
   );
 };
 
-// Funky Cat Scroll Indicator Component
-const CatScrollIndicator = () => {
+// Sophisticated Scroll Indicator Component
+const ScrollIndicator = () => {
   return (
     <motion.div 
       className="scroll-indicator"
@@ -63,64 +63,49 @@ const CatScrollIndicator = () => {
       transition={{ delay: 1.5, duration: 0.8 }}
     >
       <motion.div 
-        className="cat-container"
-        animate={{ 
-          y: [0, -10, 0],
-          rotate: [0, -5, 5, 0]
-        }}
+        className="scroll-mouse"
+        animate={{ y: [0, 8, 0] }}
         transition={{
           duration: 1.5,
           repeat: Infinity,
           ease: "easeInOut"
         }}
       >
-        <div className="pixel-cat">
-          <div className="cat-ears">
-            <span className="ear left"></span>
-            <span className="ear right"></span>
-          </div>
-          <div className="cat-face">
-            <span className="cat-eye left"></span>
-            <span className="cat-eye right"></span>
-            <span className="cat-nose"></span>
-            <div className="cat-whiskers">
-              <span className="whisker left-top"></span>
-              <span className="whisker left-bottom"></span>
-              <span className="whisker right-top"></span>
-              <span className="whisker right-bottom"></span>
-            </div>
-          </div>
-          <div className="cat-body">
-            <motion.div 
-              className="cat-tail"
-              animate={{ rotate: [0, 20, -20, 0] }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </div>
+        <div className="mouse-body">
+          <motion.div 
+            className="mouse-wheel"
+            animate={{ 
+              y: [0, 8, 0],
+              opacity: [1, 0.3, 1]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
         </div>
       </motion.div>
       <motion.div 
-        className="scroll-arrows"
-        animate={{ y: [0, 10, 0] }}
-        transition={{
-          duration: 1,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
+        className="scroll-line"
+        initial={{ height: 0 }}
+        animate={{ height: 40 }}
+        transition={{ delay: 2, duration: 0.5 }}
       >
-        <span className="arrow">▼</span>
-        <span className="arrow">▼</span>
-        <span className="arrow">▼</span>
+        <motion.div 
+          className="scroll-dot"
+          animate={{ y: [0, 30, 0] }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </motion.div>
       <motion.span 
         className="scroll-text"
         animate={{ 
-          opacity: [0.5, 1, 0.5],
-          scale: [1, 1.05, 1]
+          opacity: [0.6, 1, 0.6]
         }}
         transition={{
           duration: 2,
@@ -128,7 +113,7 @@ const CatScrollIndicator = () => {
           ease: "easeInOut"
         }}
       >
-        SCROLL DOWN
+        SCROLL
       </motion.span>
     </motion.div>
   );
@@ -254,8 +239,8 @@ const MainPage = () => {
           </div>
         </motion.div>
 
-        {/* Funky Cat Scroll Indicator */}
-        <CatScrollIndicator />
+        {/* Sophisticated Scroll Indicator */}
+        <ScrollIndicator />
       </motion.div>
     </section>
   );

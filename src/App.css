@@ -6,6 +6,7 @@
 
 body {
   overflow-x: hidden;
+  background: #0d0d1a;
 }
 
 .App {
@@ -16,4 +17,60 @@ body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Seamless transitions between sections */
+section {
+  position: relative;
+}
+
+/* Gradient fade overlays for seamless blending */
+section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(13, 13, 26, 0.5) 50%, rgba(13, 13, 26, 1) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, transparent 0%, rgba(13, 13, 26, 0.3) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* First section doesn't need top gradient */
+section:first-of-type::before {
+  display: none;
+}
+
+/* Last section doesn't need bottom gradient */
+section:last-of-type::after {
+  display: none;
+}
+
+/* Special handling for main page - no bottom fade to preserve image */
+#main::after {
+  height: 100px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(13, 13, 26, 0.8) 100%);
+}
+
+#main::before {
+  display: none;
+}
+
+/* Disable transition effects for when-not-working section due to sticky scroll */
+#when-not-working::before,
+#when-not-working::after {
+  display: none;
 }
